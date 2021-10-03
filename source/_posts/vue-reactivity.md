@@ -17,26 +17,26 @@ let fiirre2 = ref({
 });
 console.log(fiirre1);
 /**
-		{
-			__v_isRef: true,
-			_rawValue: 0,
-			_shallow: false,
-			_value: 0,
-			value: 0
-		}
-	*/
+	{
+		__v_isRef: true,
+		_rawValue: 0,
+		_shallow: false,
+		_value: 0,
+		value: 0
+	}
+*/
 console.log(fiirre2);
 /**
-		{
-			// v_isRef 这个用来判断是否是 ref 创建的
-			__v_isRef: true,
-			_rawValue: a: 1, b: 2, c: {…},
-			_shallow: false,
-			// 一个proxy对象  内部调用reactive生成
-			_value: Proxy {a: 1, b: 2, c: {…}},
-			value: Proxy {a: 1, b: 2, c: {…}}
-		}
-	*/
+	{
+		// v_isRef 这个用来判断是否是 ref 创建的
+		__v_isRef: true,
+		_rawValue: a: 1, b: 2, c: {…},
+		_shallow: false,
+		// 一个proxy对象  内部调用reactive生成
+		_value: Proxy {a: 1, b: 2, c: {…}},
+		value: Proxy {a: 1, b: 2, c: {…}}
+	}
+*/
 ```
 
 ```javascript
