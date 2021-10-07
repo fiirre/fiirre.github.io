@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="参考 https:&#x2F;&#x2F;developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Operators&#x2F;instanceof instanceof 运算符用于检测 构造函数的 prototype 属性 是否出现在某个 实例对象的原型链上。 实现 12345678910111213function instanceOf(l, r) &amp;#123;">
+    <meta name="description" content="instanceof 运算符用于检测 构造函数的 prototype 属性 是否出现在某个 实例对象的原型链上。 实现 12345678910111213function instanceOf(l, r) &amp;#123;  let left &#x3D; l.__proto__;  let right &#x3D; r.prototype;  while (true) &amp;#123;    if (left &#x3D;&#x3D;&#x3D; nu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="instanceof">
 <meta property="og:url" content="http://example.com/2021/10/07/instanceof/index.html">
 <meta property="og:site_name" content="fiirre">
-<meta property="og:description" content="参考 https:&#x2F;&#x2F;developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Operators&#x2F;instanceof instanceof 运算符用于检测 构造函数的 prototype 属性 是否出现在某个 实例对象的原型链上。 实现 12345678910111213function instanceOf(l, r) &amp;#123;">
+<meta property="og:description" content="instanceof 运算符用于检测 构造函数的 prototype 属性 是否出现在某个 实例对象的原型链上。 实现 12345678910111213function instanceOf(l, r) &amp;#123;  let left &#x3D; l.__proto__;  let right &#x3D; r.prototype;  while (true) &amp;#123;    if (left &#x3D;&#x3D;&#x3D; nu">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-07T00:38:00.629Z">
-<meta property="article:modified_time" content="2021-10-07T00:38:00.629Z">
+<meta property="article:published_time" content="2021-10-07T00:42:29.413Z">
+<meta property="article:modified_time" content="2021-10-07T00:42:29.413Z">
 <meta property="article:author" content="fiirre">
 <meta property="article:tag" content="react, vue, ts, prototype,__proto__,promise,">
 <meta name="twitter:card" content="summary">
@@ -125,7 +125,7 @@
     <div class="postdate">
       
         1
-        <time datetime="2021-10-07T00:38:00.629Z" itemprop="datePublished">2021-10-07</time>
+        <time datetime="2021-10-07T00:42:29.413Z" itemprop="datePublished">2021-10-07</time>
         
       
     </div>
@@ -140,12 +140,13 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>参考 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof</a></p>
-<p>instanceof 运算符用于检测 构造函数的 prototype 属性 是否出现在某个 实例对象的原型链上。</p>
+    <p>instanceof 运算符用于检测 构造函数的 prototype 属性 是否出现在某个 实例对象的原型链上。</p>
 <p>实现</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">instanceOf</span>(<span class="params">l, r</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> left = l.__proto__;</span><br><span class="line">  <span class="keyword">let</span> right = r.prototype;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (left === <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (left === right) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    left = left.__proto__;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!(mycar <span class="keyword">instanceof</span> Car)) &#123;</span><br><span class="line">  <span class="comment">// Do something, like mycar = new Car(mycar)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 这和以下代码完全不同</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!mycar <span class="keyword">instanceof</span> Car)</span><br><span class="line"><span class="comment">// 这段代码永远会得到 false（!mycar 将在 instanceof 之前被处理，所以你总是在验证一个布尔值是否是 Car 的一个实例）。</span></span><br></pre></td></tr></table></figure>
+
+<p>参考:<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof</a></p>
 
   </div>
 </article>
