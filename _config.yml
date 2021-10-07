@@ -4,8 +4,8 @@
 
 # Site
 title: fiirre
-description: "管他天下千万事，闲来轻笑两三声"
-keywords: "react, vue, ts"
+description: "知识点笔记"
+keywords: "react, vue, ts, prototype,__proto__,promise,"
 author: fiirre
 language: zh-CN
 timezone: ""
