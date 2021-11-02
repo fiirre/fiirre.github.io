@@ -16,7 +16,7 @@ function debounce(fn) {
 }
 ```
 
-防抖: 高频事件触发，但在 n 秒内只会执行一次，节流会稀释函数的执行频率。
+节流: 高频事件触发，但在 n 秒内只会执行一次，节流会稀释函数的执行频率。
 
 ```javascript
 function throttle(fn) {
